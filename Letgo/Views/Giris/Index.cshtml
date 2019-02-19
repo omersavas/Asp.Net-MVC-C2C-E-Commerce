@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>Let It GO!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="~/Content/images/letgo.png" id="loginlogo">
+                    <p class="text-muted">Çek, yükle, mesaj at, letgo ile kolay sat!</p>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <hr>
+                        </div>
+                        <div class="col-md-2">HIZLICA BAĞLAN</div>
+                        <div class="col-md-5">
+                            <hr>
+                        </div>
+                    </div>
+      
+                        <div class="col-md-12">
+                            <form action="Giris/kayitOl" method="post">
+                                <div class="row">
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input required type="text" class="form-control" placeholder="Ad Soyad" aria-describedby="basic-addon1" name="name">
+                                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                                            </div>
+                                            <input type="email" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon1" name="mail" required>
+                                                        </div>
+
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                                                </div>
+                                                <input minlength=4 maxlength="10" required type="password" class="form-control" placeholder="Şifre" aria-describedby="basic-addon1" name="sifre">
+                                                        </div>
+
+
+                                            <input  type="submit" value="Kayıt Ol" class="btn btn-outline-danger btn-block">
+
+                                                </div>
+                                           </form>
+                                        <form action="/Giris/giris" method="post">
+                                            <div class="row">
+
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                                                    </div>
+                                                    <input type="email" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon1" name="mail" required>
+                                                        </div>
+
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                                                        </div>
+                                                        <input minlength=4 maxlength="10" type="password" class="form-control" placeholder="Şifre" aria-describedby="basic-addon1" name="sifre" required>
+                                                        </div>
+
+
+                                                    <input type="submit" value="Giriş Yap" class="btn btn-outline-danger btn-block">
+
+                                                </div>
+                                            </form>
+                                            </div>
+
+                                    </div>
+                                    </div>
+                                </div>
+                        </section>
+
+                            <script src="~/Content/js/jquery-3.3.1.js"></script>
+                    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+</body>
+
+</html>
+

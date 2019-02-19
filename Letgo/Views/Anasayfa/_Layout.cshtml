@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Let It GO!</title>
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+    @Html.Partial("_Navbar")
+
+    @RenderBody();
+
+    @Html.Partial("_Footer")
+
+
+
+    <script src="~/Content/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+</body>
+</html>

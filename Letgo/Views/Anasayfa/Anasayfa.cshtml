@@ -1,0 +1,46 @@
+﻿@model List<Letgo.Models.tblurun>
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Anasayfa/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-car urunicon"></i></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-bolt urunicon"></i></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-user-secret urunicon"></i></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-volleyball-ball urunicon"></i></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-film urunicon"></i></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#"><i class="fas fa-home urunicon"></i></a>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        @foreach (Letgo.Models.tblurun urun in Model)
+        {
+            <div class="col-md-4 col-xs-12 col-lg 3 img-thumbnail urunler text-center">
+                <img src="~/Content/images/@urun.urunfotograf" height="285px;" width="245px;">
+            </div>
+        }
+
+    </div>
+</div>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f6ae688b82f40688272044b183de04e" Name="Diagram1">
+        <EntityTypeShape EntityType="veritabanım1Model.tblfavori" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblharita" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblkategori" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblkullanıcı" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblmesajkutusu" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblsatınal" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblsatınaltalep" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="veritabanım1Model.tblurun" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblfavori_tblkullanıcı1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblfavori_tblurun1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblkullanıcı_tblharita" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblurun_tblharita1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblurun_tblkategori1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblmesajkutusu_tblkullanıcı1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblsatınal_tblkullanıcı" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblsatınaltalep_tblkullanıcı" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblurun_tblkullanıcı" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblsatınal_tblsatınaltalep1" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblsatınal_tblurun" ManuallyRouted="false" />
+        <AssociationConnector Association="veritabanım1Model.FK_tblsatınaltalep_tblurun1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

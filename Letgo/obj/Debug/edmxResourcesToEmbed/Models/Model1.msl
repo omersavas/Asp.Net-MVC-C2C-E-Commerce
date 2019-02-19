@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="veritabanım1ModelStoreContainer" CdmEntityContainer="veritabanım1Entities">
+    <EntitySetMapping Name="tblfavori">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblfavori">
+        <MappingFragment StoreEntitySet="tblfavori">
+          <ScalarProperty Name="favoriID" ColumnName="favoriID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="KullanıcıID" ColumnName="KullanıcıID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblharita">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblharita">
+        <MappingFragment StoreEntitySet="tblharita">
+          <ScalarProperty Name="adresID" ColumnName="adresID" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="acıklama" ColumnName="acıklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblkategori">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblkategori">
+        <MappingFragment StoreEntitySet="tblkategori">
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="kategoriAdı" ColumnName="kategoriAdı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblkullanıcı">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblkullanıcı">
+        <MappingFragment StoreEntitySet="tblkullanıcı">
+          <ScalarProperty Name="kullanııcID" ColumnName="kullanııcID" />
+          <ScalarProperty Name="kullanıcıAdSoyad" ColumnName="kullanıcıAdSoyad" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="kullanıcıLocation" ColumnName="kullanıcıLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblmesajkutusu">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblmesajkutusu">
+        <MappingFragment StoreEntitySet="tblmesajkutusu">
+          <ScalarProperty Name="mesajID" ColumnName="mesajID" />
+          <ScalarProperty Name="kullanıcıID" ColumnName="kullanıcıID" />
+          <ScalarProperty Name="atılıcakkisiID" ColumnName="atılıcakkisiID" />
+          <ScalarProperty Name="mesajicerik" ColumnName="mesajicerik" />
+          <ScalarProperty Name="okundubilgisi" ColumnName="okundubilgisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblsatınal">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblsatınal">
+        <MappingFragment StoreEntitySet="tblsatınal">
+          <ScalarProperty Name="satınalID" ColumnName="satınalID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="kullanıcıID" ColumnName="kullanıcıID" />
+          <ScalarProperty Name="satınAlTarihi" ColumnName="satınAlTarihi" />
+          <ScalarProperty Name="talepID" ColumnName="talepID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblsatınaltalep">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblsatınaltalep">
+        <MappingFragment StoreEntitySet="tblsatınaltalep">
+          <ScalarProperty Name="talepID" ColumnName="talepID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="kullanıcıID" ColumnName="kullanıcıID" />
+          <ScalarProperty Name="onaydurumu" ColumnName="onaydurumu" />
+          <ScalarProperty Name="taleptarihi" ColumnName="taleptarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblurun">
+      <EntityTypeMapping TypeName="veritabanım1Model.tblurun">
+        <MappingFragment StoreEntitySet="tblurun">
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="urunAd" ColumnName="urunAd" />
+          <ScalarProperty Name="urunFiyat" ColumnName="urunFiyat" />
+          <ScalarProperty Name="urunAcıklama" ColumnName="urunAcıklama" />
+          <ScalarProperty Name="eklemeTarihi" ColumnName="eklemeTarihi" />
+          <ScalarProperty Name="satıldıDurumu" ColumnName="satıldıDurumu" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="kullanıcıID" ColumnName="kullanıcıID" />
+          <ScalarProperty Name="urunLocation" ColumnName="urunLocation" />
+          <ScalarProperty Name="urunfotograf" ColumnName="urunfotograf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

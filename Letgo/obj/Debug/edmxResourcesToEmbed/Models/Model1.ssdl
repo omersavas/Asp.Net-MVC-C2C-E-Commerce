@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="veritabanım1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblfavori">
+    <Key>
+      <PropertyRef Name="favoriID" />
+    </Key>
+    <Property Name="favoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunID" Type="int" />
+    <Property Name="KullanıcıID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblharita">
+    <Key>
+      <PropertyRef Name="adresID" />
+    </Key>
+    <Property Name="adresID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adres" Type="nvarchar(max)" />
+    <Property Name="x" Type="nvarchar(max)" />
+    <Property Name="y" Type="nvarchar(max)" />
+    <Property Name="acıklama" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblkategori">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriAdı" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblkullanıcı">
+    <Key>
+      <PropertyRef Name="kullanııcID" />
+    </Key>
+    <Property Name="kullanııcID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanıcıAdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="int" />
+    <Property Name="kullanıcıLocation" Type="int" />
+  </EntityType>
+  <EntityType Name="tblmesajkutusu">
+    <Key>
+      <PropertyRef Name="mesajID" />
+    </Key>
+    <Property Name="mesajID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanıcıID" Type="int" />
+    <Property Name="atılıcakkisiID" Type="int" />
+    <Property Name="mesajicerik" Type="text" />
+    <Property Name="okundubilgisi" Type="int" />
+  </EntityType>
+  <EntityType Name="tblsatınal">
+    <Key>
+      <PropertyRef Name="satınalID" />
+    </Key>
+    <Property Name="satınalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunID" Type="int" />
+    <Property Name="kullanıcıID" Type="int" />
+    <Property Name="satınAlTarihi" Type="date" />
+    <Property Name="talepID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblsatınaltalep">
+    <Key>
+      <PropertyRef Name="talepID" />
+    </Key>
+    <Property Name="talepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunID" Type="int" />
+    <Property Name="kullanıcıID" Type="int" />
+    <Property Name="onaydurumu" Type="int" />
+    <Property Name="taleptarihi" Type="date" />
+  </EntityType>
+  <EntityType Name="tblurun">
+    <Key>
+      <PropertyRef Name="urunID" />
+    </Key>
+    <Property Name="urunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunAd" Type="nvarchar" MaxLength="20" />
+    <Property Name="urunFiyat" Type="int" />
+    <Property Name="urunAcıklama" Type="nvarchar" MaxLength="150" />
+    <Property Name="eklemeTarihi" Type="date" />
+    <Property Name="satıldıDurumu" Type="int" />
+    <Property Name="kategoriID" Type="int" />
+    <Property Name="kullanıcıID" Type="int" />
+    <Property Name="urunLocation" Type="int" />
+    <Property Name="urunfotograf" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'veritabanım1.dbo.urunlerilistele' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="urunlerilistele">
+          <Property Name="urunAd" Type="nvarchar" MaxLength="20" />
+          <Property Name="urunAcıklama" Type="nvarchar" MaxLength="150" />
+          <Property Name="urunFiyat" Type="int" />
+          <Property Name="urunfotograf" Type="text" />
+          <Property Name="urunLocation" Type="int" />
+        </EntityType>-->
+  <Association Name="FK_tblfavori_tblkullanıcı1">
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="0..1" />
+    <End Role="tblfavori" Type="Self.tblfavori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkullanıcı">
+        <PropertyRef Name="kullanııcID" />
+      </Principal>
+      <Dependent Role="tblfavori">
+        <PropertyRef Name="KullanıcıID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblfavori_tblurun1">
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="0..1" />
+    <End Role="tblfavori" Type="Self.tblfavori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblurun">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="tblfavori">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblkullanıcı_tblharita">
+    <End Role="tblharita" Type="Self.tblharita" Multiplicity="0..1" />
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblharita">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="tblkullanıcı">
+        <PropertyRef Name="kullanıcıLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblmesajkutusu_tblkullanıcı1">
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="0..1" />
+    <End Role="tblmesajkutusu" Type="Self.tblmesajkutusu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkullanıcı">
+        <PropertyRef Name="kullanııcID" />
+      </Principal>
+      <Dependent Role="tblmesajkutusu">
+        <PropertyRef Name="kullanıcıID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblsatınal_tblkullanıcı">
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="0..1" />
+    <End Role="tblsatınal" Type="Self.tblsatınal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkullanıcı">
+        <PropertyRef Name="kullanııcID" />
+      </Principal>
+      <Dependent Role="tblsatınal">
+        <PropertyRef Name="kullanıcıID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblsatınal_tblsatınaltalep1">
+    <End Role="tblsatınaltalep" Type="Self.tblsatınaltalep" Multiplicity="0..1" />
+    <End Role="tblsatınal" Type="Self.tblsatınal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblsatınaltalep">
+        <PropertyRef Name="talepID" />
+      </Principal>
+      <Dependent Role="tblsatınal">
+        <PropertyRef Name="talepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblsatınal_tblurun">
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="0..1" />
+    <End Role="tblsatınal" Type="Self.tblsatınal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblurun">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="tblsatınal">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblsatınaltalep_tblkullanıcı">
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="0..1" />
+    <End Role="tblsatınaltalep" Type="Self.tblsatınaltalep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkullanıcı">
+        <PropertyRef Name="kullanııcID" />
+      </Principal>
+      <Dependent Role="tblsatınaltalep">
+        <PropertyRef Name="kullanıcıID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblsatınaltalep_tblurun1">
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="0..1" />
+    <End Role="tblsatınaltalep" Type="Self.tblsatınaltalep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblurun">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="tblsatınaltalep">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblurun_tblharita1">
+    <End Role="tblharita" Type="Self.tblharita" Multiplicity="0..1" />
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblharita">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="tblurun">
+        <PropertyRef Name="urunLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblurun_tblkategori1">
+    <End Role="tblkategori" Type="Self.tblkategori" Multiplicity="0..1" />
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkategori">
+        <PropertyRef Name="kategoriID" />
+      </Principal>
+      <Dependent Role="tblurun">
+        <PropertyRef Name="kategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblurun_tblkullanıcı">
+    <End Role="tblkullanıcı" Type="Self.tblkullanıcı" Multiplicity="0..1" />
+    <End Role="tblurun" Type="Self.tblurun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkullanıcı">
+        <PropertyRef Name="kullanııcID" />
+      </Principal>
+      <Dependent Role="tblurun">
+        <PropertyRef Name="kullanıcıID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="veritabanım1ModelStoreContainer">
+    <EntitySet Name="tblfavori" EntityType="Self.tblfavori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblharita" EntityType="Self.tblharita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblkategori" EntityType="Self.tblkategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblkullanıcı" EntityType="Self.tblkullanıcı" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblmesajkutusu" EntityType="Self.tblmesajkutusu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblsatınal" EntityType="Self.tblsatınal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblsatınaltalep" EntityType="Self.tblsatınaltalep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblurun" EntityType="Self.tblurun" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblfavori_tblkullanıcı1" Association="Self.FK_tblfavori_tblkullanıcı1">
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+      <End Role="tblfavori" EntitySet="tblfavori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblfavori_tblurun1" Association="Self.FK_tblfavori_tblurun1">
+      <End Role="tblurun" EntitySet="tblurun" />
+      <End Role="tblfavori" EntitySet="tblfavori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblkullanıcı_tblharita" Association="Self.FK_tblkullanıcı_tblharita">
+      <End Role="tblharita" EntitySet="tblharita" />
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblmesajkutusu_tblkullanıcı1" Association="Self.FK_tblmesajkutusu_tblkullanıcı1">
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+      <End Role="tblmesajkutusu" EntitySet="tblmesajkutusu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblsatınal_tblkullanıcı" Association="Self.FK_tblsatınal_tblkullanıcı">
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+      <End Role="tblsatınal" EntitySet="tblsatınal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblsatınal_tblsatınaltalep1" Association="Self.FK_tblsatınal_tblsatınaltalep1">
+      <End Role="tblsatınaltalep" EntitySet="tblsatınaltalep" />
+      <End Role="tblsatınal" EntitySet="tblsatınal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblsatınal_tblurun" Association="Self.FK_tblsatınal_tblurun">
+      <End Role="tblurun" EntitySet="tblurun" />
+      <End Role="tblsatınal" EntitySet="tblsatınal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblsatınaltalep_tblkullanıcı" Association="Self.FK_tblsatınaltalep_tblkullanıcı">
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+      <End Role="tblsatınaltalep" EntitySet="tblsatınaltalep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblsatınaltalep_tblurun1" Association="Self.FK_tblsatınaltalep_tblurun1">
+      <End Role="tblurun" EntitySet="tblurun" />
+      <End Role="tblsatınaltalep" EntitySet="tblsatınaltalep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblurun_tblharita1" Association="Self.FK_tblurun_tblharita1">
+      <End Role="tblharita" EntitySet="tblharita" />
+      <End Role="tblurun" EntitySet="tblurun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblurun_tblkategori1" Association="Self.FK_tblurun_tblkategori1">
+      <End Role="tblkategori" EntitySet="tblkategori" />
+      <End Role="tblurun" EntitySet="tblurun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblurun_tblkullanıcı" Association="Self.FK_tblurun_tblkullanıcı">
+      <End Role="tblkullanıcı" EntitySet="tblkullanıcı" />
+      <End Role="tblurun" EntitySet="tblurun" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

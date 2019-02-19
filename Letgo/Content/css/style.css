@@ -1,0 +1,56 @@
+#navpic {
+    width: 80px;
+    height: 50px;
+    padding: 0;
+}
+#drp {
+    float:right;
+}
+#loginlogo{
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+#leftside{
+    font-family:fantasy;
+    color:whitesmoke;
+    background-color: coral;
+    font-size: 27px;
+}
+#leftside h1{
+    margin-top: 150px;
+}
+#searchbar{
+    width: auto;
+}
+.navbut{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.icon{
+    color:lightcoral;
+    width: 10px;
+    height: 10px;
+}
+.pic{
+    border:none;
+    border-radius: 90px;
+    width: 35px;
+    height: 35px;
+}
+.picpic{
+    border:none;
+    border-radius: 90px;
+    width: 35px;
+    height: 35px;
+}
+#main-footer{
+    background-color: lightcoral;
+}
+#main-footer p{
+    color:white;
+    
+}
+.urunicon{
+    font-size: 35px;
+    color:lightcoral !important;
+}
